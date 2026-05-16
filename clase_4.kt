@@ -16,7 +16,7 @@ fun main (){
     name = "Ana",
     email = "ana@gmail.com",
     grade = 8,
-    isActive = true
+    isActive = false
     )
     println(student)
     if (student.isActive){
@@ -25,4 +25,12 @@ fun main (){
         println("El estudiante ${student.name} NO esta activo")
         
     }
+    
+    val status: String =if(student.isActive){
+        "Activo"
+    } else {
+        "Inactivo"
+    }
+    println("El estudiante ${student.name} esta $status")
+    
 }
