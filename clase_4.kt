@@ -1,17 +1,30 @@
-fun main() {
+/*fun main() {
     val name: String = "Bryan"
     val lastName: String = "Taco"
     println("Hola $name $lastName")
-}
+}*/
 
+// class Student (){
+// }
 data class Student (
 	val id:Long,
     val name: String,
-    val email: String
+    val email: String,
+    val grade: Int,
+    val isActive: Boolean
 )
 
+fun getStudentResult(student: Student): String {
+	return when (student.grade){
+        in 9..10 -> "Sobresaliente"
+        in 7..8 -> "Aprobado"
+        in 0..6 -> "Reprobado"
+        else -> "Nota Invalida"
+    }
+}
+
 fun main (){
-    val student = Student (
+    val student = Student(
     id = 1,
     name = "Ana",
     email = "ana@gmail.com",
@@ -32,7 +45,7 @@ fun main (){
         "Inactivo"
     }
     println("El estudiante ${student.name} esta $status")
-
+    
     val student2 = Student(
     id = 2,
     name = "Juan",
@@ -54,18 +67,8 @@ fun main (){
     
     for (student in students){
         if (student.isActive){
-            println("${student.name} - ${student.grade}")
+            println("${student.name} - ${student.grade} - ${getStudentResult(student)}")
         }
     }
-
-        val result = when (student.grade){
-        in 9..10 -> "Sobresaliente"
-        in 7..8 -> "Aprobado"
-        in 0..6 -> "Reprobado"
-        else -> "Nota Invalida"
-    }
-    
-    println("${student.name}: $result")
-    
     
 }
