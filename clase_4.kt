@@ -11,10 +11,18 @@ data class Student (
 )
 
 fun main (){
-    val student = Studen (
+    val student = Student (
     id = 1,
     name = "Ana",
-    email = "ana@gmail.com"
+    email = "ana@gmail.com",
+    grade = 8,
+    isActive = true
     )
     println(student)
+    if (student.isActive){
+        println("El estudiante ${student.name} esta activo")
+    } else{
+        println("El estudiante ${student.name} NO esta activo")
+        
+    }
 }
