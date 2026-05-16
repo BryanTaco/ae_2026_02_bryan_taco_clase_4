@@ -57,6 +57,15 @@ fun main (){
             println("${student.name} - ${student.grade}")
         }
     }
-}
+
+        val result = when (student.grade){
+        in 9..10 -> "Sobresaliente"
+        in 7..8 -> "Aprobado"
+        in 0..6 -> "Reprobado"
+        else -> "Nota Invalida"
+    }
+    
+    println("${student.name}: $result")
+    
     
 }
